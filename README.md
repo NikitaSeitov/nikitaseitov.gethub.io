@@ -1,2 +1,2 @@
-# nikitaseitov.gethub.io
+# nikitaseitov.github.io
 Мой первый хостинг
