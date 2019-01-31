@@ -6,13 +6,6 @@
 <link rel="stylesheet" href="style.css"> 
 <style> 
 body { 
-<!doctype html> 
-<html> 
-<head> 
-<title>3.32</title> 
-<meta charset='utf-8' /> 
-<style> 
-a.button.purple { 
 background: #e8c4e4; 
 background: -webkit-gradient(linear, 0 0, 0 bottom, from(#e8c4e4), to(#d698d0)); 
 background: -moz-linear-gradient(#e8c4e4, #d698d0); 
