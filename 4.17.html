@@ -1,0 +1,90 @@
+<!doctype html> 
+<html> 
+<head> 
+<title>canvasExample</title> 
+<meta charset='utf-8' /> 
+<script> 
+function clean(){ 
+var canvas = document.getElementById('example'); 
+var ctx = canvas.getContext('2d'); 
+ctx.fillStyle = "white"; 
+ctx.fillRect(0, 0, 640, 480); 
+ctx.closePath(); 
+} 
+function er1(){ 
+clean(); 
+var canvas = document.getElementById('example'); 
+var ctx = canvas.getContext('2d'); 
+ctx.beginPath(); 
+drawpoint1(); 
+drawpoint2(); 
+
+ctx.stroke(); 
+x=Number(document.getElementById("x_znach").value); 
+y=Number(document.getElementById("y_znach").value); 
+var b=Math.sqrt(x); 
+var R=Math.sqrt(y/Math.PI); 
+var D=Math.sqrt(2*b*b); 
+if (R<b/2) { 
+alert( "Круг будет в квадрате" ); 
+} else { 
+if (2*R>D) { 
+alert( "Квадрат будет в круге" ); 
+} else { 
+alert( "Они пересекутся" ); 
+} 
+} 
+} 
+
+function drawpoint1() { 
+x=Number(document.getElementById("x_znach").value); 
+x=240+x*100; 
+var b=Math.sqrt(x); 
+var canvas = document.getElementById('example'); 
+var ctx = canvas.getContext('2d'); 
+ctx.beginPath(); 
+ctx.strokeStyle = 'purple'; 
+ctx.moveTo(320-b/2, 240-b/2); 
+ctx.lineTo(320+b/2, 240-b/2); 
+ctx.lineTo(320+b/2, 240+b/2); 
+ctx.lineTo(320-b/2, 240+b/2); 
+ctx.closePath(); 
+ctx.stroke(); 
+} 
+function drawpoint2() { 
+y=Number(document.getElementById("y_znach").value); 
+y=160+y*100; 
+var canvas = document.getElementById('example'); 
+var ctx = canvas.getContext('2d'); 
+ctx.beginPath(); 
+ctx.strokeStyle = 'purple'; 
+ctx.arc(320, 240, Math.sqrt(y/Math.PI), 0 ,2 * Math.PI) 
+ctx.stroke(); 
+} 
+</script> 
+</head> 
+<body> 
+<nav> 
+<ul class="cf"> 
+<li><a href="index.html">Главная</a></li> 
+<li><a class="dropdown" href="#">Меню</a> 
+<ul> 
+<li><a href="exmpcss.html">Фото</a></li> 
+<li><a href="graf.html">Видео</a></li> 
+<li><a href="#">Музыка</a></li> 
+</ul> 
+</li> 
+<li><a href="java.html">Друзья</a></li> 
+<li><a href="pusto.html">Помощь</a></li> 
+<li><a href="pusto1.html">Выход</a></li> 
+</ul> 
+</nav> 
+Квадрат <input type="text" value="0" id="x_znach"> 
+Круг <input type="text" value="0" id="y_znach"> 
+<a href="#" onclick="clean()">Отчистка</a> 
+<a href="#" onclick="er1()">Жми</a> 
+
+<canvas width='640' height='480' id='example'>Обновите браузер</canvas> 
+<br> 
+</body> 
+</html>
